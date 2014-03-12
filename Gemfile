@@ -24,7 +24,8 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'byebug'
+gem 'devise'
+gem 'bcrypt'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -36,6 +37,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'byebug'
 end
 
 # Use ActiveModel has_secure_password

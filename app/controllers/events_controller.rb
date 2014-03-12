@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @events = Event.for_today
 
@@ -8,6 +11,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -38,4 +42,14 @@ class EventsController < ApplicationController
   def create_params
     params.require(:event).permit(:name, :description, :start_at, :end_at, :address)
   end
+
+  # def authenticate_user!
+  #   @user = User.find(.....)
+  #   if @user
+  #     # continue
+  #   else
+  #     render :
+  #     false
+  #   end
+  # end
 end
