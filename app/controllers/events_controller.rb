@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
-    render text: @events.inspect
+    @events = Event.for_today
   end
 
   def show
