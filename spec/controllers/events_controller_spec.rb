@@ -41,4 +41,34 @@ describe EventsController do
 
   end
 
+  describe '#create' do
+
+    it 'creates an event' do
+      # attrs = {
+      #   name: 'prueba',
+      #   description: 'prueba'*50,
+      #   start_at: 1.day.from_now,
+      #   end_at: 3.days.from_now
+      # }
+
+      attrs = FactoryGirl.attributes_for(:event)
+
+      # attrs = FactoryGirl.build(:event).attributes
+
+      expect {
+        post :create, event: attrs
+      }.to change(Event, :count)
+
+     expect(response).to redirect_to(assigns(:event))
+      # expect(response).to redirect_to(event_url)
+    end
+
+    it 'renders the form when invalid' do
+      post :create, event: { name: 'hola' }
+
+      expect(response).to render_template(:new)
+    end
+
+  end
+
 end

@@ -1,18 +1,27 @@
 class EventsController < ApplicationController
   def index
     @events = Event.for_today
+
+    @category = 1
+
+    @projects
   end
 
   def show
   end
 
   def new
+    @event = Event.new
   end
 
   def create
-    @event = Event.create(create_params)
+    @event = Event.new(create_params)
 
-    redirect_to @event
+    if @event.save
+      redirect_to @event
+    else
+      render :new
+    end
   end
 
   def edit
