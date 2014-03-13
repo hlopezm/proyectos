@@ -5,9 +5,10 @@ class EventsController < ApplicationController
   def index
     @events = Event.for_today
 
-    @category = 1
-
-    @projects
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show
