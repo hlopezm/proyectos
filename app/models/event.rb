@@ -2,12 +2,15 @@ class Event < ActiveRecord::Base
 #  validates :name, presence: true
   # validates_presence_of :name
   # validates_length_of :name, maximum: 60
+  belongs_to :user
 
   validates :name, presence: true, length: { maximum: 60 }
 
   #validates :description, length: { minimum: 100, if: :description_present? }
 
   validates_length_of :description, minimum: 100, allow_blank: true
+
+  validates :user, presence: true
 
   validate :start_at_is_present
 

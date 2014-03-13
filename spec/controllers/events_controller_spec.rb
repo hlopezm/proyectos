@@ -43,6 +43,11 @@ describe EventsController do
 
   describe '#create' do
 
+    before do
+      @user = FactoryGirl.create(:user)
+      sign_in @user
+    end
+
     it 'creates an event' do
       # attrs = {
       #   name: 'prueba',
@@ -60,7 +65,6 @@ describe EventsController do
       }.to change(Event, :count)
 
      expect(response).to redirect_to(assigns(:event))
-      # expect(response).to redirect_to(event_url)
     end
 
     it 'renders the form when invalid' do

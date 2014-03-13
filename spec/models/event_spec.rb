@@ -72,6 +72,15 @@ describe Event do
 
   end
 
+  describe 'user' do
+
+    it 'is mandatory' do
+      event = Event.new user: nil
+      expect(event).to have(1).error_on(:user)
+    end
+
+  end
+
 
 
 
