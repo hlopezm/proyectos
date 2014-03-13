@@ -22,6 +22,8 @@ class EventsController < ApplicationController
     @event = Event.new(create_params)
     @event.user = current_user
 
+    authorize @event
+
     if @event.save
       redirect_to @event
     else
@@ -30,6 +32,8 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find(params[:id])
+    authorize @event
   end
 
   def update
