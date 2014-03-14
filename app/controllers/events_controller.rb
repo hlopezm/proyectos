@@ -43,19 +43,14 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def search
+    @events = Event.name_like(params[:term])
+  end
+
   private
 
   def create_params
     params.require(:event).permit(:name, :description, :start_at, :end_at, :address)
   end
 
-  # def authenticate_user!
-  #   @user = User.find(.....)
-  #   if @user
-  #     # continue
-  #   else
-  #     render :
-  #     false
-  #   end
-  # end
 end

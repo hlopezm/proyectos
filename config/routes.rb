@@ -4,7 +4,12 @@ Ironevents::Application.routes.draw do
 
   root :to => "events#index"
 
-  resources :events
+  resources :events do
+    collection do
+      get 'search'
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
