@@ -6,7 +6,9 @@ Ironevents::Application.routes.draw do
 
   resources :events do
     collection do
-      get 'search'
+      get 'today'
+      get 'next_week'
+      get 'mine', as: :my
     end
   end
 

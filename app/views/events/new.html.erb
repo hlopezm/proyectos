@@ -1,9 +1,3 @@
-<%= debug @event.errors %>
+<h1><%= t '.header' %></h1>
 
-<%= form_for @event do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_area  :description %>
-  <%= f.date_field :start_at %>
-  <%= f.date_field :end_at %>
-  <%= f.submit 'Save' %>
-<% end %>
+<%= render partial: 'form' %>

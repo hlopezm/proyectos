@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '1.9.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
@@ -30,6 +30,8 @@ gem "pundit"
 
 gem 'jquery-ui-rails'
 
+gem 'pg'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -40,15 +42,14 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'byebug'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  #gem 'byebug'
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
+
+gem 'foundation-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

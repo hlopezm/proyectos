@@ -6,15 +6,22 @@ class EventPolicy < ApplicationPolicy
   # end
 
   def new?
-    true
+    user
   end
 
   def create?
-    true
+    user
   end
 
   def edit?
     @user == @record.user
   end
 
+  def update?
+    @user == @record.user
+  end
+
+  def destroy?
+    @user == @record.user
+  end
 end

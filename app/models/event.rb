@@ -3,15 +3,23 @@ class Event < ActiveRecord::Base
 
   validates :name, presence: true, length: { maximum: 60 }
 
-  validates_length_of :description, minimum: 100, allow_blank: true
+  validates_length_of :description, minimum: 10, allow_blank: true
 
   validates :user, presence: true
 
-  validate :start_at_is_present
+  validates :start_at, presence: true
+  validates :end_at, presence: true
 
-  def self.for_today
-    where(["DATE(start_at) = ?", Date.today])
-  end
+  scope :for_today, ->() {
+    where(["DATE(start_at) <= DATE(?) AND DATE(?) <= DATE(end_at)", Date.today, Date.today])
+  }
+
+  scope :next_week, ->() {
+    start = Date.today # TODO: Complete this line
+    last = start # TODO: Complete this line
+    # TODO: COMPLETE THE SCOPE!!!
+    where("1=1")
+  }
 
   scope :name_like, lambda { |name|
     where(["name like ?", "%#{name}%"])
