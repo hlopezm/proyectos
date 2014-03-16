@@ -1,5 +1,9 @@
 <h1><%= Event.model_name.human(count: 2) %></h1>
 
+<% if @events.empty? %>
+
+    <p>No events found.</p>
+<% else %>
 <table>
     <thead>
     <tr>
@@ -42,6 +46,7 @@
     <% end %>
     </tbody>
 </table>
+<% end %>
 
 <% if policy(Event).new? %>
     <%= link_to t(".new_event"), new_event_path, class: 'small radius button' %>
