@@ -1,0 +1,7 @@
+<h1><%= @user.email %></h1>
+
+<% if @user.has_role? :admin %>
+	<p>User is admin</p>
+<% else %>
+	<p>User is not admin</p>
+<% end %>
