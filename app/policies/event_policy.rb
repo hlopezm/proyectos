@@ -24,4 +24,12 @@ class EventPolicy < ApplicationPolicy
   def destroy?
     @user == @record.user
   end
+
+  def new_permitted_attrs
+    [:name, :description, :start_at, :end_at]
+  end
+
+  def edit_permitted_attrs
+    [:name, :description, :start_at, :end_at]
+  end
 end

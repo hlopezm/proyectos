@@ -15,10 +15,10 @@ class Event < ActiveRecord::Base
   }
 
   scope :next_week, ->() {
-    start = Date.today # TODO: Complete this line
-    last = start # TODO: Complete this line
-    # TODO: COMPLETE THE SCOPE!!!
-    where("1=1")
+    start = Date.today.next_week
+    last = start.end_of_week
+    
+    where("DATE(start_at) <= ? AND DATE(end_at) >= ?", last, start)
   }
 
   scope :name_like, lambda { |name|

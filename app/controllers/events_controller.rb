@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
 
   def index
     @events = Event.all
@@ -32,12 +33,10 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
     authorize @event
   end
 
   def update
-    @event = Event.find(params[:id])
     authorize @event
 
     if @event.update update_params
@@ -48,8 +47,6 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
-
     authorize @event
 
     @event.destroy
@@ -77,11 +74,15 @@ class EventsController < ApplicationController
 
   private
 
+  def set_event
+    @event = Event.find params[:id]
+  end
+
   def create_params
-    params.require(:event).permit(:name, :description, :start_at, :end_at)
+    params.require(:event).permit(*policy(Event).new_permitted_attrs)
   end
 
   def update_params
-    params.require(:event).permit(:name, :description, :start_at, :end_at)
+    params.require(:event).permit(*policy(@event).edit_permitted_attrs)
   end
 end
