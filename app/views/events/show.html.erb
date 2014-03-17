@@ -11,3 +11,13 @@
     -
     <%= l @event.end_at, format: :short %>
 </p>
+
+<h2><%= Comment.model_name.human count: 2 %></h2>
+
+<%= render partial: 'comment_form', locals: {event: @event} %>
+
+<ul>
+<% @event.comments.each do |comment| %>
+<li><%= comment.body %></li>
+<% end %>
+</ul>

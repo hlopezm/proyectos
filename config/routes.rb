@@ -1,5 +1,6 @@
 Ironevents::Application.routes.draw do
 
+  get "comments/create"
   devise_for :users
 
   resources :users, except: [:new, :create, :destroy]
@@ -7,6 +8,7 @@ Ironevents::Application.routes.draw do
   root :to => "events#index"
 
   resources :events do
+    resources :comments, only: [:create]
     collection do
       get 'today'
       get 'next_week'
