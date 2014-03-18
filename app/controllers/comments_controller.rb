@@ -5,10 +5,14 @@ class CommentsController < ApplicationController
     @comment = @event.comments.build comment_params
     @comment.user = current_user
 
-  	if @comment.save
-      redirect_to @event, notice: "Comment added"
-    else
-      redirect_to @event, alert: "Comment not added :("
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to @event, notice: "Comment added" }
+        format.js
+      else
+        format.html { redirect_to @event, alert: "Comment not added :(" }
+        format.js { render 'comment_error'}
+      end
     end
   end
 

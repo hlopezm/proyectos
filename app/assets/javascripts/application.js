@@ -15,6 +15,7 @@
 //= require foundation
 //= require foundation/foundation.reveal
 //= require jquery.ui.autocomplete
+//= require comments
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

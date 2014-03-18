@@ -16,8 +16,6 @@
 
 <%= render partial: 'comment_form', locals: {event: @event} %>
 
-<ul>
-<% @event.comments.each do |comment| %>
-<li><%= comment.body %></li>
-<% end %>
+<ul id="comments" class="no-bullet">
+  <%= render partial: 'comment', collection: @event.comments %>
 </ul>

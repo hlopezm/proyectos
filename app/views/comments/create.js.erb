@@ -1,0 +1,2 @@
+$('#comments').append('<%= raw render(partial: "comment", object: @comment).delete("\n") %>');
+$('#new_comment')[0].reset();
