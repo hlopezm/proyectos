@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Ironevents::Application.config.secret_key_base = 'cdd1cea8438901f1a04f22e11a2330e1a4f2fd39c8e4569d04cc6fc2e7d861522e9b85a0ebbff692f0d4019bf859b83b1c2e4c05a7bf7d413da140c64fe25e81'
+ProjectsMetro::Application.config.secret_key_base = 'cdd1cea8438901f1a04f22e11a2330e1a4f2fd39c8e4569d04cc6fc2e7d861522e9b85a0ebbff692f0d4019bf859b83b1c2e4c05a7bf7d413da140c64fe25e81'

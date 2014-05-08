@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Ironevents::Application.load_tasks
+ProjectsMetro::Application.load_tasks

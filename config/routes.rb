@@ -1,13 +1,13 @@
-Ironevents::Application.routes.draw do
+ProjectsMetro::Application.routes.draw do
 
   get "comments/create"
   devise_for :users
 
   resources :users, except: [:new, :create, :destroy]
 
-  root :to => "events#index"
+  root :to => "projects#index"
 
-  resources :events do
+  resources :projects do
     resources :comments, only: [:create]
     collection do
       get 'today'

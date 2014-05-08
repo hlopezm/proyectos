@@ -1,7 +1,8 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateProjects < ActiveRecord::Migration
   def change
-    create_table :events do |t|
+    create_table :project do |t|
       t.string :name
+      t.integer :folio
       t.text :description
       t.datetime :start_at
       t.datetime :end_at

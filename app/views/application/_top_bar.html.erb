@@ -2,7 +2,7 @@
     <ul class="title-area">
         <li class="name">
             <h1>
-                <%= link_to "Iron Events", root_path %>
+                <%= link_to "Seguimiento a Proyectos", root_path %>
             </h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -10,8 +10,8 @@
     <section class="top-bar-section">
         <ul class="left">
             <li class="divider"></li>
-            <li class="<%= current_page?(events_path) ? "active" : "" %>">
-                <%= link_to Event.model_name.human(count: 2), events_path %>
+            <li class="<%= current_page?(projects_path) ? "active" : "" %>">
+                <%= link_to Event.model_name.human(count: 2), projects_path %>
             </li>
             <li class="divider"></li>
         </ul>

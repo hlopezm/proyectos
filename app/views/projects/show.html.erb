@@ -1,0 +1,21 @@
+<h1>
+    <%= @project.name %>
+</h1>
+<p>
+    <%= @project.description %>
+</p>
+
+<p>
+    <b>Dates:</b>
+    <%= l @project.start_at, format: :short %>
+    -
+    <%= l @project.end_at, format: :short %>
+</p>
+
+<h2><%= Comment.model_name.human count: 2 %></h2>
+
+<%= render partial: 'comment_form', locals: {project: @project} %>
+
+<ul id="comments" class="no-bullet">
+  <%= render partial: 'comment', collection: @project.comments %>
+</ul>
