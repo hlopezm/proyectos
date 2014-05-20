@@ -23,12 +23,12 @@ en:
   index_actions: Actions
   activerecord:
     models:
-      event:
-        one: Event
-        other: Events
-  events:
+      project:
+        one: Project
+        other: Projects
+  projects:
     new:
-      header: 'New event'
+      header: 'New Project'
     index:
       date_header: Dates
     form:

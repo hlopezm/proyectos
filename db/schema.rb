@@ -14,18 +14,19 @@
 ActiveRecord::Schema.define(version: 20140317170420) do
 
   create_table "comments", force: true do |t|
-    t.integer  "event_id"
+    t.integer  "project_id"
     t.integer  "user_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["event_id"], name: "index_comments_on_event_id"
+  add_index "comments", ["project_id"], name: "index_comments_on_project_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "events", force: true do |t|
+  create_table "projects", force: true do |t|
     t.string   "name"
+    t.integer  "folio"
     t.text     "description"
     t.datetime "start_at"
     t.datetime "end_at"
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140317170420) do
     t.integer  "user_id"
   end
 
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"

@@ -11,7 +11,7 @@
         <ul class="left">
             <li class="divider"></li>
             <li class="<%= current_page?(projects_path) ? "active" : "" %>">
-                <%= link_to Event.model_name.human(count: 2), projects_path %>
+                <%= link_to Project.model_name.human(count: 2), projects_path %>
             </li>
             <li class="divider"></li>
         </ul>

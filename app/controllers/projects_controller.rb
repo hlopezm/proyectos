@@ -1,88 +1,84 @@
-class EventsController < ApplicationController
+class ProjectsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_event, only: [:edit, :update, :destroy]
+  before_action :set_project, only: [:edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @projects = Project.all
 
-    respond_to do |format|
-      format.html
-      format.json
-    end
   end
 
   def show
-    @event = Event.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def new
-    @event = current_user.events.build
+    @project = current_user.projects.build
   end
 
   def create
-    @event = current_user.events.build(create_params)
+    @project = current_user.projects.build(create_params)
 
-    authorize @event
+    authorize @project
 
-    if @event.save
-      redirect_to @event
+    if @project.save
+      redirect_to @project
     else
       render :new
     end
   end
 
   def edit
-    authorize @event
+    authorize @project
   end
 
   def update
-    authorize @event
+    authorize @project
 
-    if @event.update update_params
-      redirect_to @event, notice: "#{@event.name} updated"
+    if @project.update update_params
+      redirect_to @project, notice: "#{@project.name} updated"
     else
       render 'edit'
     end
   end
 
   def destroy
-    authorize @event
+    authorize @project
 
-    @event.destroy
-    redirect_to events_path, notice: "#{@event.name} was removed"
+    @project.destroy
+    redirect_to projects_path, notice: "#{@project.name} was removed"
   end
 
   def today
-    @events = Event.for_today
+    @projects = Project.for_today
     render 'index'
   end
 
   def next_week
-    @events = Event.next_week
+    @projects = Project.next_week
     render 'index'
   end
 
   def mine
     if current_user
-      @events = current_user.events
+      @projects = current_user.projects
       render 'index'
     else
-      redirect_to events_path
+      redirect_to projects_path
     end
   end
 
   private
 
-  def set_event
-    @event = Event.find params[:id]
+  def set_project
+    @project = Project.find params[:id]
   end
 
   def create_params
-    params.require(:event).permit(*policy(Event).new_permitted_attrs)
+    params.require(:project).permit(*policy(Project).new_permitted_attrs)
   end
 
   def update_params
-    params.require(:event).permit(*policy(@event).edit_permitted_attrs)
+    params.require(:project).permit(*policy(@project).edit_permitted_attrs)
   end
 end
