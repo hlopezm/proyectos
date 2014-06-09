@@ -18,7 +18,6 @@ gem 'rolify'
 gem 'bcrypt'
 gem "pundit"
 gem 'foundation-rails'
-gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 group :doc do
