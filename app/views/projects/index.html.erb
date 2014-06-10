@@ -7,23 +7,25 @@
 <table>
     <thead>
     <tr>
-        <th>
+        <th class="small-1">
+            <%= t 'Image' %>
+        </th>
+        <th class="small-3">
             <%= Project.human_attribute_name(:name) %>
         </th>
-        <th>
+        <th class="small-2">
             <%= t 'location' %>
         </th>
-        <th>
+        <th class="small-2">
             <%= t 'authorized_amount' %>
         </th>
-        <th>
+        <th class="small-2">
           <%= t 'executor' %>
         </th>
-
-        <th>
-            <%= t '.date_header' %>
+        <th class="small-2">
+            <%= t 'status' %>
         </th>
-        <th>
+        <th class="small-3">
             <%= t 'index_actions' %>
         </th>
     </tr>
@@ -33,6 +35,10 @@
     <% @projects.each do |project| %>
 
     <tr>
+
+        <td>
+            <%= image_tag(project.image_url, :class => 'list_image') %>
+        </td>
         <td>
             <%= link_to project.name, project_path(project) %>
         </td>
@@ -50,9 +56,6 @@
         </td>
 
         <td>
-            <%= l project.start_at, format: :short %>
-            -
-            <%= l project.end_at, format: :short %>
         </td>
 
         <td>

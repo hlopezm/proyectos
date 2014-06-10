@@ -30,24 +30,10 @@
     <% end %>
 
     <div class="content row">
-        <div class="large-8 columns right">
+        <div class="large-12 columns right">
             <%= yield %>
         </div>
 
-        <div class="sidebar large-4 columns left">
-            <ul class="side-nav">
-
-                <li>
-                    <%= link_to "Projects next week", next_week_projects_path %>
-                </li>
-                <% if current_user %>
-                    <li>
-                        <%= link_to "My projects", my_projects_path %>
-                    </li>
-                <% end %>
-            </ul>
-        </div>
-    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
