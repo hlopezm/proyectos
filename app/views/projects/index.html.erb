@@ -11,6 +11,16 @@
             <%= Project.human_attribute_name(:name) %>
         </th>
         <th>
+            <%= t 'location' %>
+        </th>
+        <th>
+            <%= t 'authorized_amount' %>
+        </th>
+        <th>
+          <%= t 'executor' %>
+        </th>
+
+        <th>
             <%= t '.date_header' %>
         </th>
         <th>
@@ -28,10 +38,23 @@
         </td>
 
         <td>
+            <%= project.location %>
+        </td>
+
+        <td>
+            <%= project.authorized_amount %>
+        </td>
+
+        <td>
+            <%= project.executor %>
+        </td>
+
+        <td>
             <%= l project.start_at, format: :short %>
             -
             <%= l project.end_at, format: :short %>
         </td>
+
         <td>
 
             <% if policy(project).edit? %>

@@ -26,10 +26,10 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def new_permitted_attrs
-    [:name, :description, :start_at, :end_at]
+    [:name, :description, :image_url, :folio, :authorization_number, :expected_amount, :authorized_amount, :work_number, :location, :executor, :start_at, :end_at]
   end
 
   def edit_permitted_attrs
-    [:name, :description, :start_at, :end_at]
+    [:name, :description, :image_url, :folio, :authorization_number, :expected_amount, :authorized_amount, :work_number, :location, :executor, :start_at, :end_at]
   end
 end

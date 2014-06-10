@@ -1,4 +1,15 @@
 <%= form_for @project do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@project.errors.count, "error") %> prohibited this proyecto from being saved:</h4>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
     <div class="row">
         <div class="large-12 columns">
             <%= f.label :name %>
@@ -13,6 +24,33 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="large-12 columns">
+            <%= f.label :authorization_number %>
+            <%= f.text_field :authorization_number %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <%= f.label :authorized_amount %>
+            <%= f.text_field :authorized_amount %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <%= f.label :executor %>
+            <%= f.text_field :executor %>
+        </div>
+    </div>
 
     <div class="row">
         <div class="large-12 columns">
@@ -27,6 +65,7 @@
             <%= f.date_field :end_at %>
         </div>
     </div>
+
 
     <%= f.submit t('.save'), class: 'round button' %>
 <% end %>
