@@ -18,6 +18,7 @@ gem 'rolify'
 gem 'bcrypt'
 gem "pundit"
 gem 'foundation-rails'
+gem 'nested_form'
 
 
 group :doc do

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140317170420) do
   create_table "projects", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "portfolio"
     t.string   "image_url"
     t.string   "folio"
     t.string   "authorization_number"

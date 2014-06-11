@@ -15,6 +15,7 @@
 //= require foundation
 //= require foundation/foundation.reveal
 //= require jquery.ui.autocomplete
+//= require jquery_nested_form
 //= require comments
 //= require_tree .
 

@@ -13,8 +13,8 @@
 
     <div class="row">
         <div class="large-12 columns">
-            <%= f.label :Image %>
-            <%= f.text_field :image_url %>
+            <%= f.label :portfolio %>
+            <%= f.text_field :portfolio %>
         </div>
     </div>
 
@@ -74,6 +74,12 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="large-12 columns">
+            <%= f.label :Image %>
+            <%= f.text_field :image_url %>
+        </div>
+    </div>
 
     <%= f.submit t('.save'), class: 'round button' %>
 <% end %>
