@@ -39,6 +39,7 @@
         <td>
             <%= image_tag(project.image_url, :class => 'list_image') %>
         </td>
+
         <td>
             <%= link_to project.name, project_path(project) %>
         </td>
@@ -53,9 +54,6 @@
 
         <td>
             <%= project.executor %>
-        </td>
-
-        <td>
         </td>
 
         <td>
