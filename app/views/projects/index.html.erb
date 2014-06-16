@@ -35,9 +35,8 @@
     <% @projects.each do |project| %>
 
     <tr>
-
         <td>
-            <%= image_tag(project.image_url ) %>
+           <%= image_tag (project.image_url) %>
         </td>
 
         <td>
@@ -54,14 +53,13 @@
 
         <td>
             <%= project.executor %>
-          </td>
+        </td>
 
         <td>
             <%= project.executor %>
         </td>
 
         <td>
-
             <% if policy(project).edit? %>
                 <%= link_to t('.edit'), edit_project_path(project) %><br>
             <% end %>
