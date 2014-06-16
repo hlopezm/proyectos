@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 #ruby-gemset=rails_base_rails_4_1
 
-ruby '2.1.1'
+ruby '2.1.2'
 gem 'rails', '4.1.1'
 gem 'thin'
 gem 'sass-rails', '~> 4.0.3'
@@ -18,7 +18,6 @@ gem 'rolify'
 gem 'bcrypt'
 gem "pundit"
 gem 'foundation-rails'
-gem 'nested_form'
 
 
 group :doc do
