@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require foundation/foundation.reveal
-//= require jquery.ui.autocomplete
 //= require comments
 //= require_tree .
 
