@@ -1,32 +1,23 @@
 <div class="contain-to-grid sticky">    
     <nav class="top-bar" data-topbar data-options="is_hover: false">
+      
       <ul class="title-area">
         <li class="name">
-          <h1><%= link_to "Inicio", root_path %></a></h1>
+          <h1><%= link_to "", root_path %></a></h1>
         </li>
       </ul>
 
       <section class="top-bar-section">
         <!-- Right Nav Section -->
-        <ul class="right">
+        <ul class="left">
           <li class="has-dropdown">
-            <a href="#">Right Button Dropdown</a>
+            <a href="#">Opciones</a>
             <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
+                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>
+                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>
+                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>
             </ul>
           </li>
-        </ul>
-
-      <section class="top-bar-section">
-        <ul class="left">
-          <li class="divider"></li>
-            <li class="has-dropdown">
-                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>
-                <ul class="dropdown">
-                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>
-                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>   
-                </ul>
-            </li>
         </ul>
 
       <section class="top-bar-section">
