@@ -12,52 +12,50 @@
   <% end %>
 
 
-
-<ul class="tabs" data-tab>
-  <li class="tab-title active"><a href="#panel1">Básicos</a></li>
-  <li class="tab-title"><a href="#panel2">Financiera</a></li>
-  <li class="tab-title"><a href="#panel3">Avances</a></li>
+<ul class="tabs vertical" data-tab>
+  <li class="tab-title active"><a href="#panel1a">Info Básica</a></li>
+  <li class="tab-title"><a href="#panel2a">Complementaria</a></li>
+  <li class="tab-title"><a href="#panel3a">Avances</a></li>
 </ul>
-<div class="tabs-content">
-  <div class="content active" id="panel1">
+<div class="tabs-content vertical">
+    <div class="content active" id="panel1a">
         <div class="row">
-        <div class="large-8 columns">
-            <%= f.label :name %>
-            <%= f.text_field :name %>
+          <div class="large-8 columns">
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+          </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-8 columns">
-            <%= f.label :description %>
-            <%= f.text_area  :description %>
+        <div class="row">
+            <div class="large-8 columns">
+                <%= f.label :description %>
+                <%= f.text_area  :description %>
+            </div>
         </div>
-    </div>
         <div class="large-4 columns">
-           <%= f.label :portfolio %>
+            <%= f.label :portfolio %>
             <%= f.text_field :portfolio %>
         </div> 
+        <div class="row">
+            <div class="large-4 columns">
+                <%= f.label :location %>
+                <%= f.text_field :location %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <%= f.label :authorization_number %>
+                <%= f.text_field :authorization_number %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <%= f.label :Image %>
+                <%= f.text_field :image_url %>
+            </div>
+        </div>
+      </div>
 
-    <div class="row">
-        <div class="large-4 columns">
-            <%= f.label :location %>
-            <%= f.text_field :location %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-4 columns">
-            <%= f.label :authorization_number %>
-            <%= f.text_field :authorization_number %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-4 columns">
-            <%= f.label :Image %>
-            <%= f.text_field :image_url %>
-        </div>
-    </div>
-  </div>
-
-  <div class="content" id="panel2">
+  <div class="content" id="panel2a">
     <div class="row">
         <div class="large-8 columns">
             <%= f.label :executor %>
@@ -84,7 +82,7 @@
     </div>
   </div>
 
-  <div class="content" id="panel3">
+  <div class="content" id="panel3a">
     <div class="row">
         <div class="large-4 columns">
             <%= f.label :Avance_Fisico %>
