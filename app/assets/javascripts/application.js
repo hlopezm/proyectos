@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require foundation/foundation.reveal
+//= require foundation/foundation.topbar
 //= require comments
 //= require_tree .
 
