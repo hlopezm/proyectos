@@ -27,22 +27,25 @@
         <th class="small-1">
             <%= t 'Image' %>
         </th>
-        <th class="small-3">
+        <th class="small-2">
             <%= Project.human_attribute_name(:name) %>
+        </th>
+        <th class="small-1">
+            <%= t 'authorized_amount' %>
         </th>
         <th class="small-2">
             <%= t 'location' %>
         </th>
-        <th class="small-2">
-            <%= t 'authorized_amount' %>
-        </th>
-        <th class="small-2">
+        <th class="small-1">
           <%= t 'executor' %>
         </th>
-        <th class="small-2">
+        <th class="small-2 ">
             <%= t 'status' %>
         </th>
-        <th class="small-3">
+        <th class="small-2">
+            <%= t 'contact' %>
+        </th>
+        <th class="small-1">
             <%= t 'index_actions' %>
         </th>
     </tr>
@@ -61,12 +64,13 @@
         </td>
 
         <td>
-            <%= project.location %>
+            <%= project.authorized_amount %>
         </td>
 
         <td>
-            <%= project.authorized_amount %>
+            <%= project.location %>
         </td>
+
 
         <td>
             <%= project.executor %>
@@ -74,6 +78,10 @@
 
         <td>
             <%= project.status %>
+        </td>
+
+        <td>
+            <%= project.contact %>
         </td>
 
         <td>

@@ -26,10 +26,10 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def new_permitted_attrs
-    [:name, :description, :portfolio, :image_url, :folio, :authorization_number, :expected_amount, :authorized_amount, :work_number, :location, :company, :executor, :contact, :start_at, :end_at, :goal, :unit, :contract_modified, :physical_advance, :financial_advance, :status, :delay, :observations]
+    [:name, :description, :portfolio, :image_url, :folio, :authorization_number, :contract_number, :economy, :expected_amount, :authorized_amount, :work_number, :location, :company, :executor, :contact, :start_at, :end_at, :goal, :unit, :contract_modified, :physical_advance, :financial_advance, :status, :delay, :observations]
   end
 
   def edit_permitted_attrs
-    [:name, :description, :portfolio, :image_url, :folio, :authorization_number, :expected_amount, :authorized_amount, :work_number, :location, :company, :executor, :contact, :start_at, :end_at, :goal, :unit, :contract_modified, :physical_advance, :financial_advance, :status, :delay, :observations]
+    [:name, :description, :portfolio, :image_url, :folio, :authorization_number, :contract_number, :economy, :expected_amount, :authorized_amount, :work_number, :location, :company, :executor, :contact, :start_at, :end_at, :goal, :unit, :contract_modified, :physical_advance, :financial_advance, :status, :delay, :observations]
   end
 end
