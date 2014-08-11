@@ -5,34 +5,50 @@
     <%= image_tag(@project.image_url) %>
 </p>
 <p>
+    <b>Descripción: </b>
     <%= @project.description %>
 </p>
 
 <p>
-    <b>Authorization Number:</b>
+    <b>Numero de Autorización: </b>
     <%= @project.authorization_number %>
 </p>
 
 <p>
-    <b>Location:</b>
+    <b>Ubicación:</b>
     <%= @project.location %>
 </p>
 
 <p>
-    <b>Authorized Amount:</b>
+    <b>Monto Autorizado: </b>
+    <%= @project.expected_amount %>
+</p>
+
+<p>
+    <b>Monto Contratado: </b>
     <%= @project.authorized_amount %>
 </p>
 
 <p>
-    <b>executor:</b>
+    <b>Empresa: </b>
+    <%= @project.company %>
+</p>
+
+<p>
+    <b>Ejecutor: </b>
     <%= @project.executor %>
 </p>
 
 <p>
-    <b>Dates:</b>
-    <%= l @project.start_at, format: :short %>
+    <b>Calendario de Ejecución: </b>
+    <%= l @project.start_at, format: :long %>
     -
-    <%= l @project.end_at, format: :short %>
+    <%= l @project.end_at, format: :long %>
+</p>
+
+<p>
+    <b>Enlace: </b>
+    <%= @project.contact %>
 </p>
 
 <h2><%= Comment.model_name.human count: 2 %></h2>
