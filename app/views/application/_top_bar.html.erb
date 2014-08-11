@@ -9,6 +9,7 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="left">
+            <li class="divider"></li>
           <li class="has-dropdown">
             <a href="#">Opciones</a>
             <ul class="dropdown">
@@ -19,23 +20,10 @@
           </li>
         </ul>
 
-
         <ul class="right">
             <li class="divider"></li>
             <% if current_user %>
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-                <ul class="left">
-                    </li>              
-                    <div class="row collapse">
-                        <div class="large-8 small-9 columns">
-                          <input type="text" placeholder="Ingresa Búsqueda">
-                        </div>
-                        <div class="large-4 small-3 columns">
-                          <a href="#" class="alert button expand">Buscar</a>
-                        </div>
-                    </div>
-                    </li>
-                </ul>
             <% else %>
               <li><%= link_to "Log in", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -43,3 +31,4 @@
         </ul>
       </div>
     </nav>
+
