@@ -15,6 +15,7 @@
 //= require foundation
 //=require foundation/foundation.clearing
 //=require foundation/foundation.dropdown
+//=require foundation/foundation.accordion
 //=require foundation/foundation.magellan
 //=require foundation/foundation.orbit
 //=require foundation/foundation.reveal
