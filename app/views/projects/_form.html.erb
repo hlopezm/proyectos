@@ -30,13 +30,30 @@
                 <%= f.label :description %>
                 <%= f.text_area  :description %>
             </div>
-        </div>
+          </div>
+
         <div class="row">
             <div class="large-4 columns">
                 <%= f.label :portfolio %>
                 <%= f.text_field :portfolio %>
             </div>
         </div>
+
+        <div class="row">
+          <div class="large-4 columns">
+            <label>Cartera
+              <select>
+                <option value=2010>2010</option>
+                <option value=2011>2011</option>
+                <option value=2012>2012</option>
+                <option value=2013>2013</option>
+                <option value=2014>2014</option>
+                <option value=2015>2015</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
         <div class="row">
             <div class="large-4 columns">
                 <%= f.label :location %>
