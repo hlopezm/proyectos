@@ -1,7 +1,7 @@
 <div class="large-12 columns">
   <h1 class="small-3"><%= Project.model_name.human(count: 2) %></h1>
   <ul class="left">
-    </li>              
+    </li>
       <div class="row collapse">
         <div class="large-8 small-9 columns">
           <input type="text" placeholder="Ingresa Búsqueda">
@@ -11,7 +11,7 @@
         </div>
       </div>
     </li>
-  </ul>   
+  </ul>
 </div>
 
 
@@ -19,34 +19,36 @@
 
 <% if @projects.empty? %>
 
-    <p>No projects found.</p>
+    <p>No se encontraron proyectos.</p>
 <% else %>
 <table>
     <thead>
     <tr>
-        <th class="small-1">
+<!--         <th class="small-1">
             <%= t 'Image' %>
+        </th> -->
+
+        <th class="small-1">
+            <%= t 'Cartera' %>
         </th>
         <th class="small-2">
-            <%= Project.human_attribute_name(:name) %>
+            <%= t 'Nombre' %>
         </th>
         <th class="small-1">
-            <%= t 'authorized_amount' %>
+            <%= t 'Monto Autorizado' %>
         </th>
         <th class="small-2">
-            <%= t 'location' %>
+            <%= t 'Zona Metropolitana' %>
         </th>
-        <th class="small-1">
-          <%= t 'executor' %>
-        </th>
+
         <th class="small-2 ">
-            <%= t 'status' %>
+            <%= t 'Estatus' %>
         </th>
         <th class="small-2">
-            <%= t 'contact' %>
+            <%= t 'Enlace' %>
         </th>
         <th class="small-1">
-            <%= t 'index_actions' %>
+            <%= t 'Acciones' %>
         </th>
     </tr>
     </thead>
@@ -55,8 +57,11 @@
     <% @projects.each do |project| %>
 
     <tr>
+        <%# <td>%>
+           <%#<%= image_tag (project.image_url) >
+           <%#</td>%>
         <td>
-           <%= image_tag (project.image_url) %>
+            <%= link_to project.portfolio, project_path(project) %>
         </td>
 
         <td>
@@ -64,16 +69,11 @@
         </td>
 
         <td>
-            <%= project.authorized_amount %>
+            <%= number_to_currency(project.authorized_amount) %>
         </td>
 
         <td>
-            <%= project.location %>
-        </td>
-
-
-        <td>
-            <%= project.executor %>
+            <%= project.zona %>
         </td>
 
         <td>

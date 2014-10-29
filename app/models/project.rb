@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :user
+  belongs_to :executor
   has_many :comments
 
   validates :name, presence: true, length: { maximum: 60 }

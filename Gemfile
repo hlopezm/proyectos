@@ -18,7 +18,7 @@ gem 'rolify'
 gem 'bcrypt'
 gem "pundit"
 gem 'foundation-rails'
-
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

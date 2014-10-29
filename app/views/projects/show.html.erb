@@ -4,14 +4,20 @@
 <p class="th">
     <%= image_tag(@project.image_url) %>
 </p>
-<p>
-    <b>Descripción: </b>
-    <%= @project.description %>
-</p>
 
 <p>
     <b>Numero de Autorización: </b>
     <%= @project.authorization_number %>
+</p>
+
+<p>
+    <b>Cartera: </b>
+    <%= @project.portfolio %>
+</p>
+
+<p>
+    <b>Zona Metropolitana: </b>
+    <%= @project.zona %>
 </p>
 
 <p>
@@ -21,12 +27,17 @@
 
 <p>
     <b>Monto Autorizado: </b>
-    <%= @project.expected_amount %>
+    <%= number_to_currency(@project.expected_amount) %>
 </p>
 
 <p>
     <b>Monto Contratado: </b>
-    <%= @project.authorized_amount %>
+    <%= number_to_currency(@project.authorized_amount) %>
+</p>
+
+<p>
+    <b>Economía: </b>
+    <%= number_to_currency(@project.economy) %>
 </p>
 
 <p>
@@ -34,21 +45,20 @@
     <%= @project.company %>
 </p>
 
-<p>
-    <b>Ejecutor: </b>
-    <%= @project.executor %>
-</p>
 
 <p>
     <b>Calendario de Ejecución: </b>
-    <%= l @project.start_at, format: :long %>
-    -
-    <%= l @project.end_at, format: :long %>
+    <%= @project.start_at.strftime("%d-%m-%Y") %> - <%= @project.end_at.strftime("%d-%m-%Y") %>
 </p>
 
 <p>
     <b>Enlace: </b>
     <%= @project.contact %>
+</p>
+
+<p>
+    <b>Descripción: </b>
+    <%= @project.description %>
 </p>
 
 <h2><%= Comment.model_name.human count: 2 %></h2>

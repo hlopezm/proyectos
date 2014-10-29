@@ -15,10 +15,8 @@ class CreateProjects < ActiveRecord::Migration
       t.string :location
       t.integer :goal
       t.string :unit
-      t.string :executor
       t.string :company
-      t.integer :physical_advance, :precision => 8, :scale => 2
-      t.integer :financial_advance, :precision => 8, :scale => 2
+      t.string :zona
       t.string :status
       t.string :delay
       t.string :contact
