@@ -16,4 +16,4 @@
 /tmp
 *.iml
 .idea/
-config/database.yml
+config/database.yml.env
