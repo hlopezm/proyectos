@@ -74,8 +74,6 @@
                 <%= f.date_field :end_at %>
             </div>
         </div>
-    </div>
-    </div>
 
 
         <div class="row">
@@ -97,12 +95,11 @@
         </div>
       </fieldset>
    </div>
+    </div>
    </div>
 
-      <div class="content" id="panel2-2">
 
-
-
+  <div class="content" id="panel2-2">
     <fieldset>
       <legend>Datos Complementarios</legend>
       <div class="large-4 columns">
@@ -114,23 +111,10 @@
           </div>
       </div>
 
-      <div class="large-4 columns">
+      <div class="row">
+         <div class="large-4 columns">
               <%= f.input :economy, label: 'Economía:' %>
-          </div>
-      <div class="row">
-          <div class="large-4 columns">
-              <%= f.input :delay, label: 'Prorroga:' %>
-          </div>
-      </div>
-
-      <div class="large-4 columns">
-              <%= f.input :contract_modified, label: 'No. contrato de modificación:' %>
-          </div>
-      <div class="row">
-          <div class="row large-4 columns">
-              <label for="">Acta entrega con fecha:</label>
-                <%= f.date_field :acta_entrega  %>
-          </div>
+         </div>
       </div>
 
       <div class="row large-4 columns">
@@ -140,6 +124,22 @@
         <div class="row large-4 columns">
             <%= f.input :financial_advance, label: 'Avance Financiero' %>
          </div>
+      </div>
+
+      <div class="large-4 columns">
+            <%= f.input :delay, label: 'Prorroga:' %>
+          </div>
+      <div class="row">
+         <div class="large-4 columns">
+             <%= f.input :contract_modified, label: 'No. contrato de modificación:' %>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="row large-4 columns">
+              <label for="">Fecha de acta de entrega:</label>
+                <%= f.date_field :acta_entrega  %>
+          </div>
       </div>
 
       <div class="row">
@@ -161,7 +161,9 @@
       <%#</div>%>
     </fieldset>
 
-  </div>
+</div>
    <%= f.submit t('.save'), class: 'round button' %>
+</div>
+</div>
 </div>
 <% end %>
