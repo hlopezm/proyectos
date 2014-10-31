@@ -64,7 +64,6 @@
           </div>
          </div>
 
-        <div class="row">
           <div class="row large-4 columns">
               <label for="">Fecha inicio:</label>
                 <%= f.date_field :start_at  %>
@@ -75,7 +74,6 @@
                 <%= f.date_field :end_at %>
             </div>
         </div>
-      </div>
     </div>
     </div>
 
@@ -99,6 +97,7 @@
         </div>
       </fieldset>
    </div>
+   </div>
 
       <div class="content" id="panel2-2">
 
@@ -106,51 +105,40 @@
 
     <fieldset>
       <legend>Datos Complementarios</legend>
-
-      <div class="row">
-          <div class="large-4 columns">
+      <div class="large-4 columns">
               <%= f.input :goal, label: 'Meta Programada:' %>
           </div>
-      </div>
       <div class="row">
           <div class="large-4 columns">
               <%= f.input :unit, label: 'Unidad de Medida:' %>
           </div>
       </div>
 
-      <div class="row">
-          <div class="large-4 columns">
+      <div class="large-4 columns">
               <%= f.input :economy, label: 'Economía:' %>
           </div>
-      </div>
-
       <div class="row">
           <div class="large-4 columns">
               <%= f.input :delay, label: 'Prorroga:' %>
           </div>
       </div>
 
-      <div class="row">
-          <div class="large-4 columns">
+      <div class="large-4 columns">
               <%= f.input :contract_modified, label: 'No. contrato de modificación:' %>
           </div>
-      </div>
-
       <div class="row">
           <div class="row large-4 columns">
               <label for="">Acta entrega con fecha:</label>
                 <%= f.date_field :acta_entrega  %>
           </div>
+      </div>
 
-      <div class="row">
-         <div class="row large-4 columns">
-              <label for="">Avance físico:</label>
-                <%= f.input :physical_advance %>
-          </div>
+      <div class="row large-4 columns">
+            <%= f.input :physical_advance, label: 'Avance físico:' %>
+      </div>
       <div class="row">
         <div class="row large-4 columns">
-            <label for="">Avance Financiero:</label>
-            <%= f.input :financial_advance %>
+            <%= f.input :financial_advance, label: 'Avance Financiero' %>
          </div>
       </div>
 

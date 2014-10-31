@@ -50,13 +50,15 @@
 </p>
 
 <p>
-    <b>Avance físico: </b>
+    <b>Avance físico:  </b>
     <%= @project.physical_advance %>
+    <b>%</b>
 </p>
 
 <p>
     <b>Avance financiero: </b>
     <%= @project.financial_advance %>
+    <b>%</b>
 </p>
 
 <p>
@@ -66,9 +68,8 @@
 
 <p>
     <b>Fecha de acta entrega-recepción: </b>
-    <%= @project.company %>
+    <%= @project.acta_entrega.strftime("%d/%m/%Y") %>
 </p>
-
 
 <p>
     <b>Enlace: </b>
