@@ -4,12 +4,6 @@
 <p class="th">
     <%= image_tag(@project.image_url) %>
 </p>
-
-<p>
-    <b>Numero de Autorización: </b>
-    <%= @project.authorization_number %>
-</p>
-
 <p>
     <b>Cartera: </b>
     <%= @project.portfolio %>
@@ -26,12 +20,22 @@
 </p>
 
 <p>
-    <b>Monto Autorizado: </b>
+    <b>Numero de autorización: </b>
+    <%= @project.authorization_number %>
+</p>
+
+<p>
+    <b>Instancia ejecutora:</b>
+    <%= @project.ejecutor %>
+</p>
+
+<p>
+    <b>Monto autorizado: </b>
     <%= number_to_currency(@project.expected_amount) %>
 </p>
 
 <p>
-    <b>Monto Contratado: </b>
+    <b>Monto contratado: </b>
     <%= number_to_currency(@project.authorized_amount) %>
 </p>
 
@@ -41,15 +45,30 @@
 </p>
 
 <p>
-    <b>Empresa: </b>
+    <b>Calendario de ejecución: </b>
+    <%= @project.start_at.strftime("%d/%m/%Y") %> - <%= @project.end_at.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+    <b>Avance físico: </b>
+    <%= @project.physical_advance %>
+</p>
+
+<p>
+    <b>Avance financiero: </b>
+    <%= @project.financial_advance %>
+</p>
+
+<p>
+    <b>Estatus avance: </b>
+    <%= @project.status %>
+</p>
+
+<p>
+    <b>Fecha de acta entrega-recepción: </b>
     <%= @project.company %>
 </p>
 
-
-<p>
-    <b>Calendario de Ejecución: </b>
-    <%= @project.start_at.strftime("%d-%m-%Y") %> - <%= @project.end_at.strftime("%d-%m-%Y") %>
-</p>
 
 <p>
     <b>Enlace: </b>
