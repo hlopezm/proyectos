@@ -88,7 +88,7 @@
 
         <div class="row">
           <div class="large-8 columns">
-            <%= f.input :company, label: 'Empresa:' %>
+              <%= f.input :ejecutor, priority: [ "SEPLADERyM" ], collection: [ "AYUNTAMIENTO", "COFOIN", "DIF", "SALUD", "SEDECO", "SEPLADERyM", "SOPOyT" ], label: 'Instancia Ejecutora' %>
           </div>
         </div>
 
@@ -136,6 +136,25 @@
               <%= f.input :contract_modified, label: 'No. contrato de modificación:' %>
           </div>
       </div>
+
+      <div class="row">
+          <div class="row large-4 columns">
+              <label for="">Acta entrega con fecha:</label>
+                <%= f.date_field :acta_entrega  %>
+          </div>
+
+      <div class="row">
+         <div class="row large-4 columns">
+              <label for="">Avance físico:</label>
+                <%= f.date_field :physical_advance %>
+          </div>
+      <div class="row">
+        <div class="row large-4 columns">
+            <label for="">Avance Financiero:</label>
+            <%= f.date_field :financial_advance %>
+         </div>
+      </div>
+
       <div class="row">
           <div class="large-8 columns">
               <%= f.input :status, as: :text, label: 'Estatus de avance:' %>

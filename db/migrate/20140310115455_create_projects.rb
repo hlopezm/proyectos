@@ -17,6 +17,10 @@ class CreateProjects < ActiveRecord::Migration
       t.string :unit
       t.string :company
       t.string :zona
+      t.datetime :acta_entrega
+      t.string :ejecutor
+      t.integer :physical_advance
+      t.integer :financial_advance
       t.string :status
       t.string :delay
       t.string :contact
