@@ -19,6 +19,7 @@ gem 'bcrypt'
 gem "pundit"
 gem 'foundation-rails'
 gem 'simple_form'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
